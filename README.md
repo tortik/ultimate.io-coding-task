@@ -12,10 +12,6 @@ To build a Web App Docker Image use the following command
 
 `docker build -t web-server-task .`
 
-To build a Mongo Seeding Docker Image use the following command
-
-`docker build -t mongo-seed ./mongo-seed`
-
 To Up MongoDB service and Web App use docker-compose command
 
 `docker-compose up`
