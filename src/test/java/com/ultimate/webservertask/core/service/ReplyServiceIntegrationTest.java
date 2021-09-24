@@ -2,6 +2,7 @@ package com.ultimate.webservertask.core.service;
 
 import com.ultimate.webservertask.core.model.Reply;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.JsonBody;
@@ -28,6 +29,7 @@ import static org.mockserver.model.HttpRequest.request;
 
 @Testcontainers
 @SpringBootTest
+@Tag("integration-test")
 public class ReplyServiceIntegrationTest {
 
   private static final Network network = Network.newNetwork();
