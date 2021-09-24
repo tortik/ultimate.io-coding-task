@@ -1,0 +1,8 @@
+POST https://chat.ultimate.ai/api/intents
+authorization: 825765d4-7f8d-4d83-bb03-9d45ac9c27c0
+Content-Type: application/json
+
+{
+"botId" : "5f74865056d7bb000fcd39ff",
+"message": "Hello "
+}
