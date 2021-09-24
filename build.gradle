@@ -50,3 +50,9 @@ test {
 		excludeTags "integration-test"
 	}
 }
+
+task integrationTest(type: Test) {
+	useJUnitPlatform {
+		includeTags "integration-test"
+	}
+}

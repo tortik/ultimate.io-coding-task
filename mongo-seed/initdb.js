@@ -1,6 +1,5 @@
 print('Initializing DB Start');
 
-db.replyData.drop();
 db.replyData.insertMany([
     {
         "intent": "greeting",

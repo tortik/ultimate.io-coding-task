@@ -9,9 +9,10 @@ services:
       - mongo-seed
 
   mongo-seed:
-    image: mongo-seed
+    image: mongo
     container_name: mongo-seed
     ports:
       - "27017:27017"
     volumes:
+      - ./mongo-seed/initdb.js:/docker-entrypoint-initdb.d/initdb.js
       - ./build/db/:/data/db

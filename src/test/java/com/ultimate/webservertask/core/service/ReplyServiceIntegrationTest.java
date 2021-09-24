@@ -78,7 +78,7 @@ public class ReplyServiceIntegrationTest {
         .respond(org.mockserver.model.HttpResponse.response().withStatusCode(200)
             .withBody(JsonBody.json(goodByeIntent)));
 
-    Reply reply = replyService.reply("test", "Bye");
+    Reply reply = replyService.reply("5f74865056d7bb000fcd39ff", "Hello");
 
     assertThat(reply.getReply()).isEqualTo("Thank you for a conversation. Goodbye.");
   }
