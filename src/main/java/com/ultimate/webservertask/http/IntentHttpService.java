@@ -26,9 +26,9 @@ import java.util.Optional;
 @Service
 public class IntentHttpService implements IntentService {
 
-  private String intentServiceUrl;
-  private HttpHeaders headers;
-  private RestTemplate restTemplate;
+  private final String intentServiceUrl;
+  private final HttpHeaders headers;
+  private final RestTemplate restTemplate;
 
   @Autowired
   public IntentHttpService(@Value("${application.intent.url}") String intentServiceUrl,

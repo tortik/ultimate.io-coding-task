@@ -1,7 +1,6 @@
 package com.ultimate.webservertask.http.rest;
 
 import com.ultimate.webservertask.core.model.Reply;
-import com.ultimate.webservertask.core.service.IntentService;
 import com.ultimate.webservertask.core.service.ReplyService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,5 @@
 package com.ultimate.webservertask.core.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Value;
 
 @Value

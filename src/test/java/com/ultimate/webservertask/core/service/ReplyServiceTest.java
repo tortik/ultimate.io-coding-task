@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,16 +16,16 @@ import static org.mockito.Mockito.when;
 
 class ReplyServiceTest {
 
-  private IntentService intentService = Mockito.mock(IntentService.class);
-  private ReplyDataDao replyDataDao = Mockito.mock(ReplyDataDao.class);
-  private ReplyService replyService = new ReplyService(intentService, replyDataDao);
+  private final IntentService intentService = Mockito.mock(IntentService.class);
+  private final ReplyDataDao replyDataDao = Mockito.mock(ReplyDataDao.class);
+  private final ReplyService replyService = new ReplyService(intentService, replyDataDao);
 
   @Test
   void shouldReplyWithGreetings() {
     when(replyDataDao.findByIntentAndThresholdLessThanEqual("greetings", 0.98))
         .thenReturn(Optional.of(new ReplyData("greetings", "Hello", 0.1)));
 
-    when(intentService.intents("test", "Hi")).thenReturn(Arrays.asList(new Intent("Greetings", 0.98)));
+    when(intentService.intents("test", "Hi")).thenReturn(Collections.singletonList(new Intent("Greetings", 0.98)));
 
     Reply reply = replyService.reply("test", "Hi");
 
@@ -80,7 +81,7 @@ class ReplyServiceTest {
     when(replyDataDao.findByIntentAndThresholdLessThanEqual("greetings", 0.99))
         .thenReturn(Optional.of(new ReplyData("greetings", "Hello", 0.1)));
 
-    when(intentService.intents("test", "Hi")).thenReturn(Arrays.asList(
+    when(intentService.intents("test", "Hi")).thenReturn(Collections.singletonList(
         new Intent("Greetings    ", 0.99)));
 
     Reply reply = replyService.reply("test", "Hi");

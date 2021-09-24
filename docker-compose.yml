@@ -15,9 +15,3 @@ services:
       - "27017:27017"
     volumes:
       - ./build/db/:/data/db
-#
-#  mongo-seed:
-#    image: mongo-seed
-#    container_name: mongo-seed
-#    depends_on:
-#      - mongo-db
