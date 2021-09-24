@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  web-server:
+    image: web-server-task:latest
+    container_name: web-server
+    ports:
+      - "9000:8080"
+    depends_on:
+      - mongo-seed
+
+  mongo-seed:
+    image: mongo-seed
+    container_name: mongo-seed
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./build/db/:/data/db
+#
+#  mongo-seed:
+#    image: mongo-seed
+#    container_name: mongo-seed
+#    depends_on:
+#      - mongo-db

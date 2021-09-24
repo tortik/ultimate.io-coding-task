@@ -1,4 +1,4 @@
-package com.ultimate.webservertask.http;
+package com.ultimate.webservertask.http.rest;
 
 import com.ultimate.webservertask.core.model.Reply;
 import com.ultimate.webservertask.core.service.IntentService;

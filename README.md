@@ -1,32 +1,25 @@
-# Read Me First
-The following was discovered as part of building this project:
+### Description
+Coding challenge for Ultimate.io
 
-* The original package name 'com.ultimate.web-server-task' is invalid and this project uses 'com.ultimate.webservertask' instead.
+###Prerequisites
+1. Installed docker
+2. Installed docker-compose
 
-# Getting Started
+###Build and Run Reference
+You can build and run application via `./buildAndUp.sh`
 
-### Reference Documentation
-For further reference, please consider the following sections:
+To build a Web App Docker Image use the following command
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.5/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.5/gradle-plugin/reference/html/#build-image)
-* [Testcontainers MongoDB Module Reference Guide](https://www.testcontainers.org/modules/databases/mongodb/)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.5.5/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Data MongoDB](https://docs.spring.io/spring-boot/docs/2.5.5/reference/htmlsingle/#boot-features-mongodb)
-* [Spring Data Reactive MongoDB](https://docs.spring.io/spring-boot/docs/2.5.5/reference/htmlsingle/#boot-features-mongodb)
-* [Testcontainers](https://www.testcontainers.org/)
+`docker build -t web-server-task .`
 
-### Guides
-The following guides illustrate how to use some features concretely:
+To build a Mongo Seeding Docker Image use the following command
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
+`docker build -t mongo-seed ./mongo-seed`
 
-### Additional Links
-These additional references should also help you:
+To Up MongoDB service and Web App use docker-compose command
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+`docker-compose up`
+
+####Swagger:
+`http://localhost:9000/swagger-ui.html`
 
